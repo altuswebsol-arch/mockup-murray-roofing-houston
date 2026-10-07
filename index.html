@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Murray Roofing | Commercial & Residential Roofing Contractor — Houston, TX</title>
+<link rel="stylesheet" href="fonts/fonts-extra.css">
+<style>
+:root{--bg:#16181D;--bg2:#1C1F26;--panel:#20242C;--line:#2E333D;--steel:#C0C6CE;--mut:#8B939E;--red:#B91C1C;--red-d:#7F1414;--wht:#F2F4F6}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans',system-ui,sans-serif;background:var(--bg);color:var(--wht);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+.osw{font-family:'Oswald',sans-serif}
+/* rivet-dot metal panels */
+.rivet{position:relative;background:linear-gradient(160deg,var(--panel),#1A1E24);border:1px solid var(--line);border-radius:14px}
+.rivet::after{content:"";position:absolute;inset:9px;pointer-events:none;
+ background:
+  radial-gradient(circle 3.5px at 0 0,#767e89 60%,#3a3f47 100%,transparent 101%),
+  radial-gradient(circle 3.5px at 100% 0,#767e89 60%,#3a3f47 100%,transparent 101%),
+  radial-gradient(circle 3.5px at 0 100%,#767e89 60%,#3a3f47 100%,transparent 101%),
+  radial-gradient(circle 3.5px at 100% 100%,#767e89 60%,#3a3f47 100%,transparent 101%);
+ background-repeat:no-repeat}
+/* reveal */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+/* spec topbar */
+.topbar{background:#0D0F13;border-bottom:1px solid var(--line);font-size:12.5px;letter-spacing:1.5px;color:var(--mut);text-transform:uppercase;font-weight:600}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:10px;padding-bottom:10px}
+.topbar a{color:var(--steel)}.topbar a:hover{color:#fff}
+.topbar .spec b{color:var(--red);font-weight:700}
+/* nav */
+.nav{position:sticky;top:0;z-index:60;background:rgba(22,24,29,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:15px;padding-bottom:15px}
+.logo{font-family:'Oswald';font-weight:700;font-size:25px;letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:12px}
+.logo .mk{width:16px;height:16px;background:linear-gradient(135deg,var(--red),var(--red-d));flex:0 0 16px}
+.logo small{color:var(--red);font-weight:600}
+.nlinks{display:flex;gap:30px;align-items:center;font-size:13.5px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--steel)}
+.nlinks a:not(.btn):hover{color:#fff}
+.btn{display:inline-block;font-family:'Oswald';font-weight:600;letter-spacing:2px;text-transform:uppercase;font-size:15px;padding:15px 36px;border-radius:4px;cursor:pointer;border:none;transition:.25s}
+.btn-red{background:linear-gradient(180deg,#C82323,var(--red-d));color:#fff;box-shadow:0 8px 24px rgba(185,28,28,.4)}
+.btn-red:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(185,28,28,.55)}
+.btn-steel{border:1.5px solid var(--steel);color:var(--steel)}
+.btn-steel:hover{background:var(--steel);color:#111}
+.btn-nav{padding:11px 26px;font-size:13.5px}
+/* HERO */
+.hero{position:relative;min-height:640px;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('img/roof-0.jpg') center/cover;transform:scale(1.02)}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(100deg,rgba(13,15,19,.96) 8%,rgba(13,15,19,.82) 45%,rgba(13,15,19,.25) 100%)}
+.hero-slash{position:absolute;top:-20%;bottom:-20%;right:16%;width:130px;background:linear-gradient(180deg,var(--red),var(--red-d));transform:skewX(-11deg);opacity:.85;pointer-events:none}
+.hero-slash.s2{right:calc(16% + 165px);width:26px;opacity:.6}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-top:96px;padding-bottom:96px}
+.hplate{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:rgba(22,24,29,.72);border-radius:4px;padding:9px 18px;font-size:12.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:26px}
+.hplate i{width:8px;height:8px;background:var(--red);display:inline-block}
+.hero h1{font-family:'Oswald';font-weight:700;font-size:clamp(52px,7.4vw,104px);line-height:.98;letter-spacing:1px;text-transform:uppercase;margin-bottom:22px}
+.hero h1 .rd{color:var(--red);-webkit-text-stroke:0}
+.hero h1 .ol{color:transparent;-webkit-text-stroke:2px var(--steel)}
+.hero p.lead{font-size:19px;color:var(--mut);max-width:560px;margin-bottom:38px}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.hspecs{display:flex;gap:0;margin-top:52px;border:1px solid var(--line);border-radius:4px;overflow:hidden;max-width:640px;background:rgba(22,24,29,.72)}
+.hspecs div{flex:1;padding:16px 20px;border-right:1px solid var(--line)}
+.hspecs div:last-child{border:none}
+.hspecs b{display:block;font-family:'Oswald';font-size:24px;letter-spacing:1px}
+.hspecs b em{font-style:normal;color:var(--red)}
+.hspecs span{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:var(--mut)}
+/* ticker */
+.ticker{background:var(--red);color:#fff;overflow:hidden;white-space:nowrap;border-top:1px solid #000;border-bottom:1px solid #000}
+.ttrack{display:inline-block;padding:13px 0;font-family:'Oswald';font-weight:600;letter-spacing:2.5px;font-size:15px;text-transform:uppercase;animation:tik 26s linear infinite}
+.ttrack span{margin:0 26px}
+.ttrack i{font-style:normal;opacity:.7}
+@keyframes tik{to{transform:translateX(-50%)}}
+/* sections */
+section{padding:100px 0}
+.kicker{font-size:13px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:12px}
+.kicker::before{content:"";width:38px;height:3px;background:var(--red)}
+h2.sec{font-family:'Oswald';font-weight:700;font-size:clamp(36px,4.6vw,60px);letter-spacing:1px;text-transform:uppercase;margin:16px 0 14px;line-height:1.05}
+h2.sec em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--steel)}
+.sec-sub{color:var(--mut);font-size:18px;max-width:620px;margin-bottom:56px}
+.center{text-align:center}.center .kicker{justify-content:center}.center .kicker::after{content:"";width:38px;height:3px;background:var(--red)}
+.center .sec-sub{margin-left:auto;margin-right:auto}
+/* services spec-sheet rows */
+.spec-table{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.srow{display:grid;grid-template-columns:70px 300px 1fr 60px;align-items:center;gap:24px;padding:26px 30px;border-bottom:1px solid var(--line);transition:.25s;background:var(--bg)}
+.srow:last-child{border:none}
+.srow .idx{font-family:'Oswald';font-weight:600;color:var(--mut);font-size:15px;letter-spacing:2px}
+.srow h3{font-family:'Oswald';font-weight:600;font-size:23px;letter-spacing:1px;text-transform:uppercase}
+.srow p{color:var(--mut);font-size:16px}
+.srow .arr{font-size:26px;color:var(--mut);transition:.25s;text-align:right}
+.srow:hover{background:linear-gradient(90deg,rgba(185,28,28,.16),transparent 65%)}
+.srow:hover .idx{color:var(--red)}
+.srow:hover .arr{color:var(--red);transform:translateX(6px)}
+/* certifications band */
+.certs{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px}
+.cbadge{border:1.5px dashed var(--line);border-radius:12px;padding:30px 20px;text-align:center;transition:.25s;background:rgba(255,255,255,.015)}
+.cbadge:hover{border-color:var(--red);border-style:solid;transform:translateY(-5px)}
+.cbadge .sh{width:54px;height:54px;margin:0 auto 16px;border:2px solid var(--steel);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--steel);font-family:'Oswald';font-weight:700}
+.cbadge:hover .sh{border-color:var(--red);color:var(--red)}
+.cbadge h4{font-family:'Oswald';font-weight:600;letter-spacing:1.5px;text-transform:uppercase;font-size:16px;margin-bottom:6px}
+.cbadge p{font-size:13.5px;color:var(--mut)}
+/* why — metal panels */
+.wgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
+.wcard{padding:36px 30px;transition:.3s}
+.wcard:hover{transform:translateY(-6px);border-color:var(--red)}
+.wcard .wn{font-family:'Oswald';font-size:15px;letter-spacing:3px;color:var(--red);font-weight:600}
+.wcard h3{font-family:'Oswald';font-size:22px;letter-spacing:1px;text-transform:uppercase;margin:12px 0 10px}
+.wcard p{color:var(--mut);font-size:15.5px}
+/* gallery */
+.gstrip{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.gstrip figure{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);height:250px;margin:0}
+.gstrip img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s}
+.gstrip figure:hover img{transform:scale(1.08)}
+.gstrip figcaption{position:absolute;left:0;right:0;bottom:0;padding:36px 18px 16px;background:linear-gradient(transparent,rgba(10,12,15,.85));font-family:'Oswald';font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--steel)}
+/* quote slider */
+.qsec{background:#0D0F13;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.qwrap{max-width:860px;margin:0 auto;text-align:center}
+.qmark{font-family:'Oswald';font-size:70px;color:var(--red);line-height:1}
+.qslides{position:relative;min-height:210px}
+.qslide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .7s;padding:0 16px}
+.qslide.on{opacity:1;visibility:visible;position:relative}
+.qslide p{font-size:clamp(20px,2.6vw,27px);line-height:1.5;margin:8px 0 18px;color:var(--steel)}
+.qslide .qw{font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);font-weight:700}
+.qdots{display:flex;gap:10px;justify-content:center;margin-top:22px}
+.qdots button{width:34px;height:5px;border:none;border-radius:3px;background:var(--line);cursor:pointer;transition:.3s}
+.qdots button.on{background:var(--red);width:52px}
+/* areas */
+.agrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
+.acell{border:1px solid var(--line);border-radius:8px;padding:20px;text-align:center;font-family:'Oswald';font-size:16px;letter-spacing:2px;text-transform:uppercase;color:var(--steel);transition:.25s;background:var(--bg2)}
+.acell:hover{border-color:var(--red);color:#fff}
+/* CTA */
+.cta{background:linear-gradient(180deg,#0D0F13,#16181D);border-top:1px solid var(--line);text-align:center}
+.cta .call-label{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--mut);font-weight:700}
+.bigphone{font-family:'Oswald';font-weight:700;font-size:clamp(44px,7vw,84px);letter-spacing:2px;color:#fff;display:inline-block;margin:14px 0 10px;transition:.25s}
+.bigphone:hover{color:var(--red);transform:scale(1.02)}
+.cta p{color:var(--mut);font-size:18px;max-width:560px;margin:0 auto 34px}
+/* contact */
+.cgrid2{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.crow{display:flex;gap:18px;margin-bottom:24px;align-items:flex-start}
+.crow .ic{width:54px;height:54px;flex:0 0 54px;border:1px solid var(--line);border-radius:8px;background:var(--panel);display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--red)}
+.crow b{display:block;font-size:12.5px;letter-spacing:2px;text-transform:uppercase;color:var(--mut);margin-bottom:4px}
+.crow span{font-size:17px;color:var(--wht)}
+.form{padding:40px}
+.form h3{font-family:'Oswald';font-size:27px;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+.form>p{color:var(--mut);font-size:15px;margin-bottom:24px}
+.form input,.form textarea,.form select{width:100%;padding:15px 16px;border:1px solid var(--line);border-radius:8px;font-size:16px;margin-bottom:14px;font-family:inherit;background:#14161B;color:var(--wht);transition:.2s}
+.form input:focus,.form textarea:focus,.form select:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 3px rgba(185,28,28,.25)}
+.form select option{background:#14161B}
+.form button{width:100%}
+/* footer */
+footer{background:#0A0C0F;border-top:1px solid var(--line);padding:56px 0 30px;font-size:14px;color:var(--mut)}
+.frow{display:flex;justify-content:space-between;flex-wrap:wrap;gap:22px;align-items:center}
+.flogo{font-family:'Oswald';font-weight:700;font-size:22px;letter-spacing:2px;text-transform:uppercase;color:#fff;display:flex;align-items:center;gap:10px}
+.flogo .mk{width:13px;height:13px;background:var(--red)}
+.mocknote{margin-top:34px;padding-top:28px;border-top:1px solid var(--line);text-align:center}
+.mocknote .badge{display:inline-block;border:1.5px solid var(--red);border-radius:30px;padding:10px 28px;font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.mocknote p{max-width:620px;margin:0 auto;font-size:13px}
+.mocknote a{color:var(--steel)}
+@media(max-width:900px){
+ .nlinks a:not(.btn){display:none}
+ .srow{grid-template-columns:1fr;gap:8px;padding:24px}
+ .srow .arr{display:none}
+ .gstrip{grid-template-columns:1fr 1fr}
+ .cgrid2{grid-template-columns:1fr;gap:44px}
+ .hero-slash{display:none}
+ .hspecs{flex-direction:column}
+ .hspecs div{border-right:none;border-bottom:1px solid var(--line)}
+ section{padding:72px 0}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+<div class="spec">Contractor File <b>TX-ROOF-2026</b> — Houston, Texas</div>
+<div><a href="mailto:hello@murrayroofingllc.com">hello@murrayroofingllc.com</a> &nbsp;·&nbsp; <a href="tel:8889568772">(888) 956-8772</a></div>
+</div></div>
+<nav class="nav"><div class="wrap">
+<div class="logo"><span class="mk"></span>Murray <small>Roofing</small></div>
+<div class="nlinks"><a href="#services">Services</a><a href="#standards">Standards</a><a href="#work">Work</a><a href="#areas">Areas</a>
+<a class="btn btn-red btn-nav" href="tel:8889568772">Free Quote</a></div>
+</div></nav>
+
+<header class="hero">
+<div class="hero-bg"></div><div class="hero-shade"></div>
+<div class="hero-slash s2"></div><div class="hero-slash"></div>
+<div class="wrap">
+<span class="hplate rv in"><i></i>Houston's Roofing Contractor — Est. Texas Operations</span>
+<h1 class="rv in">Built to <span class="rd">Weather</span><br><span class="ol">Texas.</span> Built<br>to Last.</h1>
+<p class="lead rv in">Full-scope roofing for homes and businesses across Greater Houston — inspections, repairs, replacements and storm restoration, executed to a contractor-grade standard.</p>
+<div class="hero-cta rv in"><a class="btn btn-red" href="tel:8889568772">Call (888) 956-8772</a><a class="btn btn-steel" href="#contact">Request a Quote</a></div>
+<div class="hspecs rv in">
+<div><b>25<em>+</em></b><span>Years Combined Experience</span></div>
+<div><b><em>1.2</em>K+</b><span>Roofs Completed</span></div>
+<div><b><em>24</em>HR</b><span>Storm Response</span></div>
+<div><b><em>10</em>YR</b><span>Workmanship Warranty</span></div>
+</div>
+</div>
+</header>
+
+<div class="ticker"><div class="ttrack"><span>Licensed &amp; Insured</span><i>◆</i><span>Free Roof Inspections</span><i>◆</i><span>Residential &amp; Commercial</span><i>◆</i><span>Storm Damage Specialists</span><i>◆</i><span>10-Year Workmanship Warranty</span><i>◆</i><span>Licensed &amp; Insured</span><i>◆</i><span>Free Roof Inspections</span><i>◆</i><span>Residential &amp; Commercial</span><i>◆</i><span>Storm Damage Specialists</span><i>◆</i><span>10-Year Workmanship Warranty</span><i>◆</i></div></div>
+
+<section id="services"><div class="wrap">
+<div class="kicker rv">Service Specification</div>
+<h2 class="sec rv">One Contractor. <em>Every Roof.</em></h2>
+<p class="sec-sub rv">Six service lines, one standard: done right the first time. Select a line to request a quote.</p>
+<div class="spec-table rv">
+<div class="srow"><span class="idx">S-01</span><h3>Roof Inspections</h3><p>Detailed inspections with honest, easy-to-understand reports.</p><span class="arr">→</span></div>
+<div class="srow"><span class="idx">S-02</span><h3>Residential Roofing</h3><p>Repair and replacement for Houston homes.</p><span class="arr">→</span></div>
+<div class="srow"><span class="idx">S-03</span><h3>Commercial Roofing</h3><p>Reliable roofing systems for business properties.</p><span class="arr">→</span></div>
+<div class="srow"><span class="idx">S-04</span><h3>Roof Replacement</h3><p>Full replacements built for Texas weather.</p><span class="arr">→</span></div>
+<div class="srow"><span class="idx">S-05</span><h3>Storm Restoration</h3><p>Complete storm damage recovery, start to finish.</p><span class="arr">→</span></div>
+<div class="srow"><span class="idx">S-06</span><h3>Gutters &amp; Drainage</h3><p>Gutter systems that protect your foundation and landscaping.</p><span class="arr">→</span></div>
+</div>
+</div></section>
+
+<section class="certs" id="standards" style="padding:80px 0"><div class="wrap">
+<div class="center"><div class="kicker rv">Certifications &amp; Standards</div>
+<h2 class="sec rv">Held to a <em>Higher Spec</em></h2>
+<p class="sec-sub rv">The credentials and commitments behind every Murray Roofing project.</p></div>
+<div class="cgrid">
+<div class="cbadge rv"><div class="sh">✓</div><h4>Licensed &amp; Insured</h4><p>Fully covered crews on every job site.</p></div>
+<div class="cbadge rv"><div class="sh">A+</div><h4>BBB Accredited</h4><p>A+ rated business standing.</p></div>
+<div class="cbadge rv"><div class="sh">10</div><h4>Year Warranty</h4><p>Workmanship backed in writing.</p></div>
+<div class="cbadge rv"><div class="sh">24</div><h4>Hour Response</h4><p>Storm damage answered within a day.</p></div>
+<div class="cbadge rv"><div class="sh">TX</div><h4>Local Crews</h4><p>Houston-based teams, no subcontractors.</p></div>
+</div>
+</div></section>
+
+<section id="why"><div class="wrap">
+<div class="kicker rv">Why Murray</div>
+<h2 class="sec rv">The Corporate <em>Difference</em></h2>
+<p class="sec-sub rv">We run roofing like the serious construction trade it is — documented, scheduled and guaranteed.</p>
+<div class="wgrid">
+<div class="wcard rivet rv"><div class="wn">R-01</div><h3>Inspection-First</h3><p>We diagnose before we prescribe. You get a written report — never a sales pitch dressed as one.</p></div>
+<div class="wcard rivet rv"><div class="wn">R-02</div><h3>Both Sectors</h3><p>Equally at home on family homes and commercial buildings — one crew standard for both.</p></div>
+<div class="wcard rivet rv"><div class="wn">R-03</div><h3>Storm Expertise</h3><p>Hail and wind damage is our specialty. We document everything your insurer needs to see.</p></div>
+<div class="wcard rivet rv"><div class="wn">R-04</div><h3>Easy to Reach</h3><p>One call connects you to real help fast — no call centers, no runaround.</p></div>
+</div>
+</div></section>
+
+<section id="work" style="padding-top:0"><div class="wrap">
+<div class="center"><div class="kicker rv">Field Record</div>
+<h2 class="sec rv">Recent <em>Deployments</em></h2>
+<p class="sec-sub rv">A cross-section of recent residential and commercial projects across Greater Houston.</p></div>
+<div class="gstrip">
+<figure class="rv"><img loading="lazy" src="img/roof-1.jpg" alt="Residential roof replacement in Houston"><figcaption>Residential — Replacement</figcaption></figure>
+<figure class="rv"><img loading="lazy" src="img/roof-2.jpg" alt="Commercial roofing system installation"><figcaption>Commercial — Installation</figcaption></figure>
+<figure class="rv"><img loading="lazy" src="img/roof-3.jpg" alt="Storm damage restoration work"><figcaption>Storm — Restoration</figcaption></figure>
+<figure class="rv"><img loading="lazy" src="img/roof-4.jpg" alt="Roof inspection in progress"><figcaption>Inspection — Report</figcaption></figure>
+</div>
+</div></section>
+
+<section class="qsec"><div class="wrap"><div class="qwrap">
+<div class="qmark rv">“</div>
+<div class="qslides rv">
+<div class="qslide on"><p>Murray handled our roof replacement start to finish — on schedule, on budget, and the crew left the place spotless.</p><div class="qw">— Homeowner, League City</div></div>
+<div class="qslide"><p>After the hail storm they documented everything for our insurance and had the roof restored within two weeks. Outstanding.</p><div class="qw">— Property Manager, Baytown</div></div>
+<div class="qslide"><p>Straightforward quote, honest inspection, zero upsell. The rare contractor you actually recommend to neighbors.</p><div class="qw">— Homeowner, Conroe</div></div>
+</div>
+<div class="qdots"><button class="on" aria-label="quote 1"></button><button aria-label="quote 2"></button><button aria-label="quote 3"></button></div>
+</div></div></section>
+
+<section id="areas"><div class="wrap">
+<div class="center"><div class="kicker rv">Service Areas</div>
+<h2 class="sec rv">Operating <em>Across Houston</em></h2>
+<p class="sec-sub rv">Crews dispatched daily throughout the Greater Houston area.</p></div>
+<div class="agrid rv">
+<div class="acell">Houston</div><div class="acell">Baytown</div><div class="acell">Conroe</div><div class="acell">League City</div><div class="acell">Friendswood</div><div class="acell">Deer Park</div>
+</div>
+</div></section>
+
+<section class="cta"><div class="wrap rv">
+<div class="call-label">Direct Line — Free Inspections</div>
+<a class="bigphone" href="tel:8889568772">(888) 956-8772</a>
+<p>One call and we'll take it from there — inspection scheduled, report delivered, roof handled.</p>
+<a class="btn btn-red" href="#contact">Request Your Free Quote</a>
+</div></section>
+
+<section id="contact"><div class="wrap">
+<div class="center"><div class="kicker rv">Get In Touch</div>
+<h2 class="sec rv">Start the <em>Paperwork</em></h2>
+<p class="sec-sub rv">Call, email or send the form — a real person replies fast.</p></div>
+<div class="cgrid2">
+<div class="rv">
+<div class="crow"><div class="ic">✆</div><div><b>Phone</b><span>(888) 956-8772</span></div></div>
+<div class="crow"><div class="ic">✉</div><div><b>Email</b><span>hello@murrayroofingllc.com</span></div></div>
+<div class="crow"><div class="ic">◈</div><div><b>Headquarters</b><span>Houston, TX — serving Greater Houston</span></div></div>
+<div class="crow"><div class="ic">◷</div><div><b>Hours</b><span>Mon–Fri 8am–6pm · Sat 9am–2pm</span></div></div>
+</div>
+<form class="form rivet rv" onsubmit="return false"><h3>Request a Free Quote</h3>
+<p>Spec your project — we'll respond with next steps.</p>
+<input placeholder="Your name" required><input placeholder="Phone number" type="tel" required>
+<input placeholder="Email address" type="email">
+<select><option>Service line…</option><option>Roof Inspections</option><option>Residential Roofing</option><option>Commercial Roofing</option><option>Roof Replacement</option><option>Storm Restoration</option><option>Gutters &amp; Drainage</option></select>
+<textarea rows="4" placeholder="Project details…"></textarea>
+<button class="btn btn-red" type="submit">Submit Request →</button></form>
+</div>
+</div></section>
+
+<footer><div class="wrap"><div class="frow">
+<div><div class="flogo"><span class="mk"></span>Murray Roofing</div>
+<div style="margin-top:8px">Roofing Contractor — Houston, TX.</div></div>
+<div>© 2026 Murray Roofing LLC. All rights reserved.</div>
+</div>
+<div class="mocknote">
+<span class="badge">✦ Concept by <a href="https://altuswebsolutions.com">Altus Web Solutions</a> ✦</span>
+<p>Free homepage concept crafted exclusively for Murray Roofing. Your photos, logo and details slot straight in — <a href="https://altuswebsolutions.com">ask us</a> about the full website.</p>
+</div></div></footer>
+
+<script>
+(function(){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+var qs=document.querySelectorAll('.qslide'),qd=document.querySelectorAll('.qdots button'),j=0;
+function qgo(k){qs[j].classList.remove('on');qd[j].classList.remove('on');j=(k+qs.length)%qs.length;qs[j].classList.add('on');qd[j].classList.add('on');}
+setInterval(function(){qgo(j+1)},5500);
+qd.forEach(function(d,k){d.addEventListener('click',function(){qgo(k);});});
+})();
+</script>
+</body>
+</html>
